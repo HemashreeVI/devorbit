@@ -30,7 +30,11 @@ function initialHistory() {
 export default function GitVisualizer() {
   const [hist, setHist] = useState(initialHistory);
   const [lines, setLines] = useState(WELCOME);
-  const [explain, setExplain] = useState({ text: 'One initial commit on main. Your move.', kind: 'info' });
+  const [explain, setExplain] = useState(() =>
+    Object.keys(hist.present.commits).length > 1
+      ? { text: 'Welcome back: your repo is exactly where you left it.', kind: 'info' }
+      : { text: 'One initial commit on main. Your move.', kind: 'info' }
+  );
   const [effect, setEffect] = useState(null);
   const [view, setView] = useLocalStorage('devorbit.gitview', '2d');
   const [done, setDone] = useLocalStorage('devorbit.quests', []);

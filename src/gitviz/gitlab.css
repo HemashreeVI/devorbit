@@ -1,7 +1,7 @@
 .gl-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .gl-tools { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .gl-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; }
-.gl-main { display: grid; gap: 16px; min-width: 0; }
+.gl-main { display: grid; gap: 16px; min-width: 0; align-content: start; }
 .gl-side { display: grid; gap: 16px; align-content: start; }
 @media (max-width: 980px) { .gl-grid { grid-template-columns: 1fr; } }
 
